@@ -403,6 +403,13 @@ function KitTab() {
             <li>Forensic tips for your specific platform</li>
             <li>Pay via UPI — instant, no account</li>
           </ul>
+          <div style={{ display: 'grid', placeItems: 'center', marginTop: 12 }}>
+            <img src="qr.png" alt="UPI QR — ₹499 Saboot Pro Kit" width="150" height="150"
+                 style={{ borderRadius: 10, border: '1px solid var(--border)', background: '#fff' }} />
+            <p className="muted small" style={{ textAlign: 'center', marginTop: 6 }}>
+              Scan with any UPI app — ₹499 pre-filled. Activation code arrives on payment.
+            </p>
+          </div>
           <p className="muted small" style={{ marginTop: 8 }}>One payment. For the worst week of your life, done right.</p>
         </div>
         <div className="kit-card">

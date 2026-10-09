@@ -7,7 +7,15 @@ import { resolve } from 'node:path'
 
 const UPI_ID = process.argv[2] || 'saboot-app@upi'
 const NAME = process.argv[3] || 'Saboot'
-const payload = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(NAME)}&cu=INR`
+const AMOUNT = process.argv[4] || ''
+
+const params = [
+  `pa=${encodeURIComponent(UPI_ID)}`,
+  `pn=${encodeURIComponent(NAME)}`,
+  'cu=INR',
+]
+if (AMOUNT) params.push(`am=${Number(AMOUNT).toFixed(2)}`) // NPCI spec: fixed amount
+const payload = `upi://pay?${params.join('&')}`
 console.log('UPI deep link:', payload)
 
 await QRCode.toFile(resolve('public/qr.png'), payload, {
