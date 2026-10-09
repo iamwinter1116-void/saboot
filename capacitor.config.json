@@ -1,0 +1,8 @@
+{
+  "appId": "in.saboot.app",
+  "appName": "Saboot",
+  "webDir": "dist",
+  "bundledWebRuntime": false,
+  "android": { "allowMixedContent": false },
+  "server": { "androidScheme": "https" }
+}
